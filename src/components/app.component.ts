@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {BenchmarkComponent} from "./benchmark/benchmark.component";
+
 @Component({
     selector: 'jsbb-app',
     template: `
@@ -11,6 +11,16 @@ import {BenchmarkComponent} from "./benchmark/benchmark.component";
     
     <benchmark></benchmark>
 </div>
+
+<hr>
+
+<p class="text-muted text-center">
+    <small>
+        &copy; 2016 Michael Strobel
+        -
+        <a href="https://github.com/kryops/jsbb" target="_blank">GitHub</a>
+    </small>
+</p>
 
 `
 })
