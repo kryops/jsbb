@@ -18,7 +18,8 @@ import {BenchmarkEntry} from "./benchmark-entry";
                 {{b.result.error}}
             </template>
             <template [ngIf]="!b.result.error">
-                {{b.result.hz | number:'1.0-0'}} &plusmn; {{b.result.stats.rme | number:'1.0-2'}} %
+                {{b.result.hz | formatNumber}} 
+                <template [ngIf]="b.result.stats && b.result.stats.rme">&plusmn; {{b.result.stats.rme | formatNumber:'1.2-2'}} %</template>
             </template>
             <template [ngIf]="b.fastest">
                 (FASTEST)

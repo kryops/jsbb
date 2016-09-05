@@ -1,5 +1,7 @@
 import { rollup } from 'rollup';
+import sourcemaps from 'rollup-plugin-sourcemaps';
 import nodeResolve from 'rollup-plugin-node-resolve';
+import babel from 'rollup-plugin-babel';
 
 class RollupNG2 {
     constructor(options){
@@ -17,7 +19,9 @@ const rollupNG2 = (config) => new RollupNG2(config);
 export default {
     entry: 'dist/temp/es6/main.js',
     plugins: [
+        sourcemaps(),
         rollupNG2(),
+        babel(),
         nodeResolve({ jsnext: true, main: true })
     ],
     external: [
@@ -31,5 +35,6 @@ export default {
         ace: 'ace'
     },
     dest: 'dist/temp/rollup/bundle.js',
-    format: 'iife'
+    format: 'iife',
+    sourceMap: true
 };

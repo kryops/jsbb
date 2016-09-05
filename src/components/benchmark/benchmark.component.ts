@@ -109,6 +109,8 @@ export class BenchmarkComponent implements OnInit {
     }
 
     removeBenchmark(b: BenchmarkEntry) {
+        if(this.benchmarks.length === 1) return;
+
         var index = this.benchmarks.indexOf(b);
 
         if(index !== -1) {
