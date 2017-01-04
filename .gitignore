@@ -2,3 +2,5 @@
 /node_modules
 .idea
 *.ngfactory.ts
+*.ngsummary.json
+npm-debug.log

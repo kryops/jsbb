@@ -1,6 +1,8 @@
 import {Component, OnInit, OnDestroy, ElementRef, ViewChild, EventEmitter, Output, Input} from '@angular/core';
 import Editor = AceAjax.Editor;
 
+(<any>ace).config.set("basePath", "/dist");
+
 @Component({
     selector: 'editor',
     template: ``

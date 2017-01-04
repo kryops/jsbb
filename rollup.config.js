@@ -1,28 +1,17 @@
-import { rollup } from 'rollup';
 import sourcemaps from 'rollup-plugin-sourcemaps';
 import nodeResolve from 'rollup-plugin-node-resolve';
-import babel from 'rollup-plugin-babel';
-
-class RollupNG2 {
-    constructor(options){
-        this.options = options;
-    }
-    resolveId(id, from){
-        if (id.startsWith('rxjs/')){
-            return `${__dirname}/node_modules/rxjs-es/${id.replace('rxjs/', '')}.js`;
-        }
-    }
-}
-
-const rollupNG2 = (config) => new RollupNG2(config);
+import commonjs from 'rollup-plugin-commonjs';
 
 export default {
-    entry: 'dist/temp/es6/main.js',
+    entry: 'dist/temp/aot_js/src/main.js',
     plugins: [
         sourcemaps(),
-        rollupNG2(),
-        babel(),
-        nodeResolve({ jsnext: true, main: true })
+        nodeResolve({ jsnext: true, main: true }),
+        commonjs({
+            include: [
+                'node_modules/rxjs/**'
+            ]
+        })
     ],
     external: [
         'lodash',

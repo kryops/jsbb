@@ -1,17 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es2015",
+    "target": "es5",
     "module": "es2015",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false,
-    "outDir": "dist/temp/es6",
+    "outDir": "dist/temp/aot_js",
     "sourceMap": true
   },
   "exclude": [
     "node_modules",
     "dist"
-  ]
+  ],
+
+  "angularCompilerOptions": {
+    "genDir": "dist/temp/aot_ts",
+    "skipMetadataEmit" : true
+  }
 }
